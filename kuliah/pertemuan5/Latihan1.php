@@ -29,7 +29,7 @@
 
     // MEnambahkan elemen baru di akhir array menggunakan array_push()
 
-    array_push($bulan, 'april','mei','juni','juli');
+    array_push($bulan, 'april','mei','juni','juli','agustus');
     print_r($bulan);
     echo "<hr>";
 

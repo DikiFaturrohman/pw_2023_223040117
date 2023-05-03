@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.jumbotron {
+  background-color: #AFD3E2;
+}
+
+#image {
+  margin: 50px;
+}
+
+.hero {
+  background-color: #19A7CE;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 100px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.btn {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.features {
+  background-color: #19A7CE;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.features ul {
+  list-style: none;
+}

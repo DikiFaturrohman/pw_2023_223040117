@@ -1,95 +1,108 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* CSS Reset 
+  http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+/* CSS */
+
+.navbar {
+  background-color:darkgrey;
 }
 
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbar-brand {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
-nav ul li {
-  display: inline-block;
+.navbar ul li {
+  margin-right: 20px;
 }
 
-nav ul li a {
-  color: #fff;
-  display: block;
-  padding: 10px;
-  text-decoration: none;
+.nav-link:hover {
+  color: orange;
 }
 
-nav ul li a:hover {
-  background-color: #fff;
-  color: #333;
+.carousel {
+  border-bottom: 3px solid orange;
 }
 
-.jumbotron {
-  background-color: #AFD3E2;
+.carousel-caption h5 {
+  font-weight: bold;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  font-size: xx-large;
+  color: orange;
 }
 
-#image {
-  margin: 50px;
+.carousel-caption span {
+  color: orange;
 }
 
-.hero {
-  background-color: #19A7CE;
-  background-size: cover;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 100px;
+.carousel-caption p {
+  font-size: xx-large;
+  -webkit-text-stroke: 0.8px rgb(0, 0, 0);
+ 
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 30px;
+.container {
+  width: 1000px;
+  height: 1000px;
 }
-
-.hero p {
-  font-size: 24px;
+.content-title {
+  margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.btn {
-  background-color: #333;
-  border: none;
-  color: #fff;
   display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  border-bottom: 5px solid orange;
 }
 
-.btn:hover {
-  background-color: #fff;
-  color: #333;
-}
-
-.features {
-  background-color: #19A7CE;
-  text-align: center;
-}
-
-.features h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.features ul {
-  list-style: none;
+.content {
+  height: 750px;
+  background-color: darkgrey;
+  margin: auto;
+  border-radius: 50px;
 }

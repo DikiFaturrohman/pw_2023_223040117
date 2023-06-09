@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: darkgrey;
+}
+
+.navbar-brand {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.nav-link:hover {
+  color: orange;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}

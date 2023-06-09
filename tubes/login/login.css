@@ -1,0 +1,80 @@
+.container {
+  width: 500px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: darkgrey;
+  margin-bottom: 50px;
+}
+
+.navbar {
+  background-color: darkgrey;
+  margin-bottom: 100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.container button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.footer {
+  background-color: darkgrey;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+}
+
+.footer img {
+float: right;
+}
+
+.footer p {
+margin-top: 50px;
+margin-left: 60px;
+text-align: left;
+display: inline-block ;
+font-size: larger;
+}
+
+.footer a {
+margin-left: 150px;
+display: inline-block;
+font-size: large;
+}
+
+.footer span {
+color: green;
+}
+

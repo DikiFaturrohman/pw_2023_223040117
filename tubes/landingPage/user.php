@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" href="../img/Lambang_Kabupaten_Subang-removebg-preview.png">
+
   <title>Website Kabupaten Subang</title>
 
   <!-- CSS -->
@@ -33,7 +35,7 @@
             <a class="nav-link" aria-current="page" href="user.php">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#profil">Profil</a>
+            <a class="nav-link" href="#profil">Profil Pemerintah</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../landingPage/daftar.php">Pendaftaran Penduduk</a>
@@ -42,13 +44,9 @@
             <a class="nav-link" href="#hubungi">Hubungi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../login/login.php">Login</a>
+            <a class="nav-link" href="../login/logout.php">Logout</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Cari</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -101,13 +99,17 @@
       <div class="bupati">
         <img src="../img/Bupati_Subang_Ruhimat.jpg" alt="">
         <h5>H. Ruhimat, S.Pd., M.Si</h5>
+        <br>
         <p>Bupati Subang</p>
+        <br>
         <p>Periode 2018 - Sekarang</p>
       </div>
       <div class="wbupati">
         <img src="../img/Wabup_Subang_Agus_MR.jpg" alt="">
         <h5>Agus Masykur Rosyadi, S.Si., MM</h5>
+        <br>
         <p>Wakil Bupati Subang</p>
+        <br>
         <p>Periode 2018 - Sekarang</p>
       </div>
     </div>
@@ -140,7 +142,6 @@
     <div class="footer">
       <img src="../img/subang_jawara.png" alt="" width="250px" height="150px">
       <p>&copy; 2023 <span> KABUPATEN SUBANG. </span> All rights reserved.</p>
-      <a href="../login/login.php"><br>Login</a>
     </div>
   </footer>
 

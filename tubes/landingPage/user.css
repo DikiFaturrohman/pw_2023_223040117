@@ -52,6 +52,9 @@ table {
 
 
 /* CSS */
+body {
+  background-image: url("../img/bg.jpg");
+}
 .navbar {
   background-color: darkgrey;
 }
@@ -78,7 +81,7 @@ table {
 
 .container {
   width: 1000px;
-  height: 1800px;
+  height: 2500px;
 }
 
 #sapa {
@@ -97,8 +100,7 @@ table {
 }
 
 .content {
-  height: 600px;
-  background-color: darkgrey;
+  height: 1350px;
   margin-bottom: 100px;
 }
 
@@ -140,15 +142,15 @@ form textarea {
 }
 
 .bupati {
-  float: left;
+
   padding-top: 60px;
-  padding-left: 150px;
+
 }
 
 .wbupati {
-  float: right;
+
   padding-top: 60px;
-  padding-right: 150px;
+
 }
 
 .bupati img {
@@ -161,12 +163,12 @@ form textarea {
 
 .bupati h5, p {
   margin-top: 20px;
-  text-align: center;
+  display: block;
 }
 
 .wbupati h5, p{
   margin-top: 20px;
-  text-align: center;
+  display: block;
 }
 
 .footer {
@@ -175,7 +177,7 @@ form textarea {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 330px;
 }
 
 .footer img {

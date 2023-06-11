@@ -5,22 +5,29 @@
     exit;
   }
 require 'functions.php';
+
+// Ambil Data di URL
+$id = $_GET["id"];
+
+// Query ID
+$pdk = query("SELECT * FROM penduduk WHERE id = $id")[0];
+
 // Submit Check
 if (isset($_POST["submit"])) {
 
 
   // Insert Check
-  if (tambah($_POST) > 0) {
+  if (ubah ($_POST) > 0) {
     echo "
       <script>
-        alert('Data berhasil ditambahkan!');
+        alert('Data berhasil diubah!');
         document.location.href = 'admin.php';
       </script>
       ";
   } else {
     echo "
       <script>
-        alert('Data gagal ditambahkan!');
+        alert('Data gagal diubah!');
         document.location.href = 'admin.php';
       </script>
       ";
@@ -36,7 +43,7 @@ if (isset($_POST["submit"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../img/Lambang_Kabupaten_Subang-removebg-preview.png">
-  <title>Tambah Data Penduduk</title>
+  <title>Ubah Data Penduduk</title>
 
   <style>
     body {
@@ -91,7 +98,7 @@ if (isset($_POST["submit"])) {
 
 <body>
 
-<nav class="navbar navbar-expand-lg shadow sticky-top">
+  <nav class="navbar navbar-expand-lg shadow sticky-top">
     <div class="container-fluid">
       <img src="../img/Lambang_Kabupaten_Subang-removebg-preview.png" alt="Subang" title="Logo Pemerintahan Subang" width="80px" height="80px">
       <a class="navbar-brand" href="#">Kabupaten<br>Subang</a>
@@ -111,33 +118,34 @@ if (isset($_POST["submit"])) {
     </div>
   </nav>
 
-  <h1>Tambah Data Penduduk</h1>
+  <h1>Ubah Data Penduduk</h1>
   <form action="" method="post">
+  <input type="hidden" name="id" value="<?= $pdk["id"]; ?>">
 
 
         <label for="nik">Nomor Induk Kependudukan :</label>
-        <input type="text" name="nik" id="nik" autocomplete="off" required>
+        <input type="text" name="nik" id="nik" autocomplete="off" required value="<?= $pdk["nik"]; ?>">
 
         <label for="namadepan">Nama Depan :</label>
-        <input type="text" name="namadepan" id="namadepan" autocomplete="off" required>
+        <input type="text" name="namadepan" id="namadepan" autocomplete="off" required value="<?= $pdk["namadepan"]; ?>">
 
         <label for="namabelakang">Nama Belakang :</label>
-        <input type="text" name="namabelakang" id="namabelakang" autocomplete="off" required>
+        <input type="text" name="namabelakang" id="namabelakang" autocomplete="off" required value="<?= $pdk["namabelakang"]; ?>">
         <br><br>
         <label for="tglahir">Tanggal Lahir :</label>
-        <input type="date" name="tglahir" id="tglahir" autocomplete="off" required>
+        <input type="date" name="tglahir" id="tglahir" autocomplete="off" required value="<?= $pdk["tglahir"]; ?>">
         <br><br>
         <label for="jeniskelamin">Jenis Kelamin :</label>
-        <select id="jeniskelamin" name="jeniskelamin" autocomplete="off" required>
+        <select id="jeniskelamin" name="jeniskelamin" autocomplete="off" required value="<?= $pdk["jeniskelamin"]; ?>">
           <option value="Laki-Laki">Laki-laki</option>
           <option value="Perempuan">Perempuan</option>
         </select>
 
         <label for="alamat">Alamat :</label>
-        <input type="text" name="alamat" id="alamat" autocomplete="off" required>
+        <input type="text" name="alamat" id="alamat" autocomplete="off" required value="<?= $pdk["alamat"]; ?>">
 
         <label for="agama">Agama :</label>
-        <select id="agama" name="agama" autocomplete="off" required>
+        <select id="agama" name="agama" autocomplete="off" required value="<?= $pdk["agama"]; ?>">
           <option value="Islam">Islam</option>
           <option value="Kristen-Protestan">Kristen Protestan</option>
           <option value="Kristen-Khatolik">Kristen Khatolik</option>
@@ -147,9 +155,9 @@ if (isset($_POST["submit"])) {
         </select>
 
         <label for="pekerjaan">Pekerjaan :</label>
-        <input type="text" name="pekerjaan" id="pekerjaan" autocomplete="off" required>
+        <input type="text" name="pekerjaan" id="pekerjaan" autocomplete="off" required value="<?= $pdk["pekerjaan"]; ?>">
         <br> <br> <br>
-        <button type="submit" name="submit">Tambah Data</button>
+        <button type="submit" name="submit">Ubah Data</button>
 
 
   </form>

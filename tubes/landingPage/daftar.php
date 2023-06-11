@@ -1,3 +1,35 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["login"])) {
+    header("Location: ../login/login.php");
+    exit;
+  }
+
+require '../admin/functions.php';
+
+// Submit Check
+if (isset($_POST["submit"])) {
+
+
+  // Insert Check
+  if (daftar ($_POST) > 0) {
+    echo "
+      <script>
+        alert('Berhasil Mendaftar!');
+        document.location.href = 'user.php';
+      </script>
+      ";
+  } else {
+    echo "
+      <script>
+        alert('Gagal Mendaftar!');
+        document.location.href = 'user.php';
+      </script>
+      ";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +37,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../img/Lambang_Kabupaten_Subang-removebg-preview.png">
   <title>Form Pendaftaran</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <style>
@@ -12,6 +45,9 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0px;
+     
+  background-image: url("../img/bg.jpg");
+
     }
 
     .navbar {
@@ -74,7 +110,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 150px;
+      height: 330px;
     }
 
     .footer img {
@@ -125,7 +161,7 @@
             <a class="nav-link" href="../landingPage/user.php #hubungi">Hubungi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../login/login.php">Login</a>
+            <a class="nav-link" href="../login/logout.php">Logout</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -137,30 +173,30 @@
   </nav>
 
   <h1>Form Pendaftaran Kependudukan</h1>
-  <form style="display: inline-block;">
+  <form style="display: inline-block;" action="" method="post">
     <label for="nik">NIK:</label>
-    <input type="text" id="nik" name="nik" required>
+    <input type="text" id="nik" name="nik" autocomplete="off" required>
 
     <label for="namadepan">Nama Depan:</label>
-    <input type="text" id="namadepan" name="namadepan" required>
+    <input type="text" id="namadepan" name="namadepan" autocomplete="off" required>
 
     <label for="namabelakang">Nama Belakang:</label>
-    <input type="text" id="namabelakang" name="namabelakang" required>
+    <input type="text" id="namabelakang" name="namabelakang" autocomplete="off" required>
 
     <label for="tglahir">Tanggal Lahir:</label>
-    <input type="date" id="tglahir" name="tglahir" required>
+    <input type="date" id="tglahir" name="tglahir" autocomplete="off" required>
 
     <label for="jeniskelamin">Jenis Kelamin:</label>
-    <select id="jeniskelamin" name="jeniskelamin" required>
+    <select id="jeniskelamin" name="jeniskelamin" autocomplete="off" required>
       <option value="laki-laki">Laki-laki</option>
       <option value="perempuan">Perempuan</option>
     </select>
 
     <label for="alamat">Alamat:</label>
-    <input type="text" id="alamat" name="alamat" required>
+    <input type="text" id="alamat" name="alamat" autocomplete="off" required>
 
     <label for="agama">Agama:</label>
-    <select id="agama" name="agama" required>
+    <select id="agama" name="agama"  autocomplete="off"required>
       <option value="islam">Islam</option>
       <option value="kristen-protestan">Kristen Protestan</option>
       <option value="kristen-khatolik">Kristen Khatolik</option>
@@ -170,9 +206,9 @@
     </select>
 
     <label for="pekerjaan">Pekerjaan:</label>
-    <input type="text" id="pekerjaan" name="pekerjaan" required>
+    <input type="text" id="pekerjaan" name="pekerjaan" autocomplete="off" required>
     <br><br>
-    <input type="submit" value="Daftar">
+    <input type="submit" value="Daftar" name="submit">
   </form>
 
   <footer>

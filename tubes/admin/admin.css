@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  
+    background-image: url("../img/bg.jpg");
+  
 }
 
 .navbar {
@@ -51,4 +54,9 @@ footer {
   padding: 10px;
   color: #fff;
   text-align: center;
+}
+
+button {
+  background-color: green;
+  color: #fff;
 }

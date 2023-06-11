@@ -1,7 +1,19 @@
 <?php
+  session_start();
+  if(!isset($_SESSION["login"])) {
+    header("Location: ../login/login.php");
+    exit;
+  }
+
+
 require 'functions.php';
 // Query
 $penduduk = query("SELECT * FROM penduduk");
+
+if(isset($_POST["cari"])) {
+  $penduduk = cari ($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +21,7 @@ $penduduk = query("SELECT * FROM penduduk");
 
 <head>
   <title>Admin</title>
+  <link rel="icon" href="../img/Lambang_Kabupaten_Subang-removebg-preview.png">
   <!-- CSS -->
   <link rel="stylesheet" href="admin.css">
 
@@ -19,7 +32,7 @@ $penduduk = query("SELECT * FROM penduduk");
 
 <body>
 
-<nav class="navbar navbar-expand-lg shadow sticky-top">
+  <nav class="navbar navbar-expand-lg shadow sticky-top">
     <div class="container-fluid">
       <img src="../img/Lambang_Kabupaten_Subang-removebg-preview.png" alt="Subang" title="Logo Pemerintahan Subang" width="80px" height="80px">
       <a class="navbar-brand" href="#">Kabupaten<br>Subang</a>
@@ -29,8 +42,8 @@ $penduduk = query("SELECT * FROM penduduk");
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../landingPage/user.php">Keluar</a>
-          </li> 
+            <a class="nav-link" href="../login/logout.php">Keluar</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="tambah.php">Tambah</a>
           </li>
@@ -48,6 +61,11 @@ $penduduk = query("SELECT * FROM penduduk");
     <div class="table">
       <h2>Daftar Penduduk</h2>
 
+      <form action="" method="post">
+        <input type="text" name="keyword" size="50" placeholder="Masukan Keyword" autofocus  autocomplete="off">
+        <button type="submit" name="cari">Cari</button>
+      </form>
+      <br>
       <table border="1" cellpadding="10" cellspacing="0">
         <tr>
           <th>No.</th>
@@ -66,7 +84,7 @@ $penduduk = query("SELECT * FROM penduduk");
           <tr>
             <td><?= $i; ?></td>
             <td>
-              <a href="">Ubah</a>
+              <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
               <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin');">Hapus</a>
             </td>
             <td><?= $row["nik"]; ?></td>

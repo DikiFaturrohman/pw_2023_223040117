@@ -1,3 +1,7 @@
+body {
+  background-image: url("../img/bg.jpg");
+}
+
 .container {
   width: 500px;
   height: 350px;
@@ -28,7 +32,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="password2"] {
   width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
@@ -44,7 +49,7 @@ input[type="password"] {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .footer {
@@ -53,7 +58,7 @@ input[type="password"] {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 330px;
 }
 
 .footer img {

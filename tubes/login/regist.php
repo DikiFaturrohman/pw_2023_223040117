@@ -1,45 +1,23 @@
 <?php 
-session_start();
-
-if(isset($_SESSION["login"])) {
-  header("Location: ../admin/admin.php");
-  exit;
-}
-
 require '../admin/functions.php';
+  if(isset($_POST["register"])) {
 
-  if(isset($_POST["login"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
-
-    // Check Username
-    if(mysqli_num_rows($result) === 1) {
-      // Password Check
-      $row = mysqli_fetch_assoc($result);
-      $role = $row["role"];
-      if(password_verify($password, $row["password"])) {
-        // Set Session
-        $_SESSION["login"] = true;
-        if($role=='admin'){
-
-        header("Location: ../admin/admin.php");
-        exit;
-        } else {
-          header("Location: ../landingPage/user.php");
-          exit;
-        }
-      }
+    if (registrasi ($_POST)>0) {
+      echo "<script>
+              alert('User baru berhasi ditambahkan');
+            </script>";
+            header("Location: ../login/login.php");
+            exit;
+    } else {
+      echo mysqli_error($conn);
     }
-    $error = true;
   }
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Halaman Login</title>
+  <title>Halaman Registrasi</title>
   <link rel="icon" href="../img/Lambang_Kabupaten_Subang-removebg-preview.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="login.css">
@@ -62,25 +40,23 @@ require '../admin/functions.php';
             <a class="nav-link" href="#">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../landingPage/daftar.php">Pendaftaran Penduduk</a>
+            <a class="nav-link" href="#">Pendaftaran Penduduk</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Hubungi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../login/regist.php">Registrasi</a>
+            <a class="nav-link" href="../login/login.php">Login</a>
           </li>
-        </ul>
+        </ul> 
       </div>
     </div>
   </nav>
 
   <div class="container">
-    <h2>Login</h2>
-    <?php if(isset($error)) : ?>
-      <p style="color: red;">Username / Password Salah!</p>
-    <?php endif; ?>
+    <h2>Registrasi</h2>
     <form action="" method="post">
+    
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" autocomplete="off" placeholder="Masukkan username" required>
@@ -89,7 +65,16 @@ require '../admin/functions.php';
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" autocomplete="off" placeholder="Masukkan password" required>
       </div>
-      <button type="submit" name="login">Login</button>
+      <div class="form-group">
+        <label for="password2">Konfirmasi Password:</label>
+        <input type="password" id="password2" name="password2" autocomplete="off" placeholder="Konfirmasi password" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="user"></label>
+        <input type="hidden" id="user" name="user" placeholder="user" required>
+      </div> -->
+
+      <button type="submit" name="register">Daftar</button>
     </form>
   </div>
 
